@@ -25,12 +25,14 @@
    <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <div>
+                <div class="col-md-1">
                     <img src="/svg/logo.svg" style="max-height:40px; ;">
                 </div>
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+                <div>
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        {{ config('app.name', 'Laravel') }}
+                    </a>
+                </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -38,14 +40,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li><a href="/">Home</a></li>
-                        @if (Auth::check())
-                            <li><a href="/tweets/create">Write a tweet</a></li>
-                        @endif
-                    </ul>
+                            @if (Auth::check())
+                                <li><a href="/tweets/create">Write a tweet</a></li>
+                            @endif
+                            <div class="navbar-nav ml-auto">
+                                <li><a href="/">Home</a></li>
+                            </div>  
+                    </ul> 
+
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto"> 
+                    
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
