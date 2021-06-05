@@ -10,7 +10,9 @@
 					{{ $tweet->name}}
 				</header>
 				<div>
-					{{$tweet->text}}
+					<a href="/tweets/{{ $tweet->id }}">
+						{{$tweet->text}}
+					</a>
 				</div>
 				<hr>
 			</section>

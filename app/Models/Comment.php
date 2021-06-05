@@ -8,8 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     use HasFactory;
-    public function tweet()
+    public function tweets()
     {
         return $this->belongsTo(tweets::class);
     }
+     public function user()
+    {
+        return $this ->belongsTo('\App\Models\User');
+    }
+    protected $fillable = [
+        'user_id', 'text', 'tweets_id'
+    ];
 }
