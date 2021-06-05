@@ -7,11 +7,11 @@
  As a tweeter, I want to update my tweet in case I mispelled it [DONE]
  As a tweeter, I want to delete my tweet [DONE]
 
-As a tweeter, Follow, unfolow,
+As a tweeter, Follow, unfolow, (https://codeplaners.com/laravel-8-follow-unfollow-example/)
 As a tweeter block other users,
 As a tweeter make Public or private profile
 
 
-As a admin search and see posts
+As a admin search and see posts (https://www.laravelcode.com/post/how-to-make-admin-auth-in-laravel8-with-example)
     Delete posts,
     ban users.
