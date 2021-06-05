@@ -17,6 +17,6 @@
 			@endif
 		</div>
 		<div>
-			<button>Ad tweet</button>
+			<button>Add tweet</button>
 		</div>
 	</form>
