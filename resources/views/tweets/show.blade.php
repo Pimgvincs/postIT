@@ -12,9 +12,11 @@
 	@endif
 	<form action="/comments?tweetid={{ $tweet ->id }}" method="POST">
 		@csrf
+		@if (Auth::check())
 		<label for="comment" > Add Comment</label>
 		<input type="text" name="text" id="comment">
 		<button>Add Comment</button>
+		@endif
 		@error('text')
 		    <div>{{ $message }}</div>
 		@enderror
