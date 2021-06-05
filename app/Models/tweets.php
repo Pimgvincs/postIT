@@ -16,13 +16,4 @@ class tweets extends Model
 
         return $this->hasMany(Comment::class);
     }
-    public function user() 
-    {
-        return $this->belongsTo('\App\Models\User');
-    }
-    public function setTextAttribute($text)
-    {
-
-        $this->attributes['text'] = $text;
-    }
 }

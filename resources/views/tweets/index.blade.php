@@ -10,11 +10,8 @@
 					{{ $tweet->name}}
 				</header>
 				<div>
-					<a href="/tweets/{{ $tweet->id }}">
 					{{$tweet->text}}
-					</a>
 				</div>
-				<div></div>
 				<hr>
 			</section>
 		@endforeach

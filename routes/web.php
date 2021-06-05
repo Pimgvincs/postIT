@@ -20,8 +20,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::resource('tweets', App\Http\Controllers\TweetsController::class);
-
-Route::post('comments', [App\Http\Controllers\CommentController::class, 'store']);
-

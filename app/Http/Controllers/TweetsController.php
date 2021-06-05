@@ -64,10 +64,9 @@ class TweetsController extends Controller
      * @param  \App\Models\tweets  $tweets
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(tweets $tweets)
     {
-        $tweet = tweets::find($id);
-        return view ('tweets.show', ['tweet' => $tweet]);
+        //
     }
 
     /**
@@ -76,10 +75,9 @@ class TweetsController extends Controller
      * @param  \App\Models\tweets  $tweets
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(tweets $tweets)
     {
-        $tweet = tweets::find($id);
-        return view ('tweets.edit', ['tweet' =>$tweet]);
+        //
     }
 
     /**
@@ -89,17 +87,9 @@ class TweetsController extends Controller
      * @param  \App\Models\tweets  $tweets
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tweets $tweets, $id)
+    public function update(Request $request, tweets $tweets)
     {
-        $request->validate([
-            'text' => 'required'
-        ]);
-
-        $tweet = tweets::find($id);
-        $tweet->text = $request->text;
-        $tweet->save();
-
-        return redirect ("/tweets/$id");
+        //
     }
 
     /**
@@ -108,9 +98,8 @@ class TweetsController extends Controller
      * @param  \App\Models\tweets  $tweets
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(tweets $tweets)
     {
-        tweets::where(['id' => $id])->delete();
-        return redirect('/tweets');
+        //
     }
 }
