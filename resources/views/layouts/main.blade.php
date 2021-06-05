@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PostIT</title>
+    <script>
+        jQuery(document).ready(function($){
+            $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+            });
+        })
+        </script>
 </head>
 <body>
     <h1>PostIT</h1>
