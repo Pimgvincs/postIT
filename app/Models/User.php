@@ -49,6 +49,7 @@ class User extends Authenticatable
     }
     public function tweets() 
     {
-        return $this->hasMany('\App\Models\tweets');
+        return $this->hasMany('\App\Models\Tweets');
     }
+
 }

@@ -10,8 +10,46 @@
 As a tweeter, Follow, unfolow, (https://codeplaners.com/laravel-8-follow-unfollow-example/)
 As a tweeter block other users,
 As a tweeter make Public or private profile
+[none of this]
 
 
-As a admin search and see posts (https://www.laravelcode.com/post/how-to-make-admin-auth-in-laravel8-with-example)
-    Delete posts,
-    ban users.
+ALL search [DONE] and see posts 
+   admin and user who created post , can Delete posts, [DONE]
+    ban users.[nop]
+
+
+Make profile views for all users
+        but guests cant edit 
+        private or public [not]
+
+In admins profile all posts
+        all auth users [Done]
+        can delete users( not admins)
+
+In users profile all posts they have made
+            can edit his/her profile(information) [not yet]
+
+
+in welcome.blade 
+<button data-toggle="collapse" data-target="#demo" class="float-right  bg-success mr-3  >Profils</button>
+  
+    <div id="demo" class="collapse float-right text-right text-light col-md-12 pl-3">
+         @if ( Auth::check()) 
+        <div class="border-right pl-3">
+        <p class="mt-1"> {{ Auth::user()->name }}</p>
+       
+      <p> {{ Auth::user()->email }}  </P>
+        </div>
+      @else
+       <div class="border-right pl-3">
+        <p class="mt-1"> Guest</p>
+       
+      <p> Guest@.test  </P>
+        </div>
+      @endif
+      </div>
+            </div>
+    </div>
+        </div>
+    <hr style="width:100% " class="h-100 bg-success">
+    </div> 

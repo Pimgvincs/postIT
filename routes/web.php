@@ -24,6 +24,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('tweets', App\Http\Controllers\TweetsController::class);
 
 Route::post('comments', [App\Http\Controllers\CommentController::class, 'store']);
+Route::get('/search/', [App\Http\Controllers\TweetsController::class, 'search'])->name('search');
+Route::get('profile', [App\Http\Controllers\UsersController::class, 'index'])->name('profile');
 
 
 

@@ -13,6 +13,12 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script> function darkmode ('color')
+    {
+     document.body.style.background=color;
+    } 
+    </script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -26,9 +32,9 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <div class="col-md-1">
-                    <img src="/svg/logo.svg" style="max-height:40px; ;">
+                    <img src="/svg/logo.svg" style="max-height:45px;">
                 </div>
-                <div>
+                <div class="h5 border-2">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>

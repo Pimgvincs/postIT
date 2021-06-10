@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\tweets;
+use App\Models\Tweets;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,7 +15,7 @@ class TweetsController extends Controller
      */
     public function index()
     {
-        $tweets = tweets::join('users', 'users.id', '=', 'tweets.user_id')
+        $tweets = Tweets::join('users', 'users.id', '=', 'tweets.user_id')
         ->select('tweets.*', 'users.name')
         ->orderBy('created_at', 'desc')
         ->get();
@@ -48,7 +48,7 @@ class TweetsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'text' => 'required|max:25'
+            'text' => 'required'
         ]);
 
         tweets::create([
@@ -66,7 +66,7 @@ class TweetsController extends Controller
      */
     public function show($id)
     {
-        $tweet = tweets::find($id);
+        $tweet = Tweets::find($id);
         return view ('tweets.show', ['tweet' => $tweet]);
     }
 
@@ -78,7 +78,7 @@ class TweetsController extends Controller
      */
     public function edit($id)
     {
-        $tweet = tweets::find($id);
+        $tweet = Tweets::find($id);
         return view ('tweets.edit', ['tweet' =>$tweet]);
     }
 
@@ -89,13 +89,13 @@ class TweetsController extends Controller
      * @param  \App\Models\tweets  $tweets
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tweets $tweets, $id)
+    public function update(Request $request, Tweets $tweets, $id)
     {
          $request->validate([
             'text' => 'required'
         ]);
 
-        $tweet = tweets::find($id);
+        $tweet = Tweets::find($id);
         $tweet->text = $request->text;
         $tweet->save();
 
@@ -110,7 +110,19 @@ class TweetsController extends Controller
      */
     public function destroy($id)
     {
-        tweets::where(['id' => $id])->delete();
+        Tweets::where(['id' => $id])->delete();
         return redirect('/tweets');
     }
+
+     public function search(Request $request)
+    {
+        $search = $request->input('search');
+
+        $tweets = Tweets::query()
+            ->where('text', 'like', "%{$search}%")
+            ->get();
+
+        return view('search', compact('tweets'));
+    }
+
 }

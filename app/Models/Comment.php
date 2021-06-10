@@ -10,7 +10,7 @@ class Comment extends Model
     use HasFactory;
     public function tweets()
     {
-        return $this->belongsTo(tweets::class);
+        return $this->belongsTo(Tweets::class);
     }
      public function user()
     {
