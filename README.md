@@ -24,14 +24,14 @@ Make profile views for all users
 
 In admins profile all posts
         all auth users [Done]
-        can delete users( not admins)
+        can delete users( not admins) [not done]
 
 In users profile all posts they have made
-            can edit his/her profile(information) [not yet]
+            can edit his/her profile(information) [almost tikai nestradā route]
 
 
 in welcome.blade 
-<button data-toggle="collapse" data-target="#demo" class="float-right  bg-success mr-3  >Profils</button>
+<button data-toggle="collapse" data-target="#demo" class="float-right  bg-success mr-3"  >Profils</button>
   
     <div id="demo" class="collapse float-right text-right text-light col-md-12 pl-3">
          @if ( Auth::check()) 
@@ -53,3 +53,28 @@ in welcome.blade
         </div>
     <hr style="width:100% " class="h-100 bg-success">
     </div> 
+
+
+    <div class="border-right pl-3">
+        <p class="mt-1"> {{ Auth::user()->name }}</p>
+        <p> {{ Auth::user()->email }}  </P>
+        </div>
+                
+        <div class="bg-dark mb-2 pb-2">
+            @foreach ($tweets as $tweet)
+            <section>
+                <hr>
+                <header>
+                    <p>{{ $tweet->name}}</p>
+                    @foreach ($tweet->comments as $comment)</div>
+                        <div class="bg-dark">
+                            <hr>
+                            <p class="text-info ">-- {{ $comment->user->name}} --</p>
+                            <p class="  text-light ml-2">{{ $comment->text}}</p>
+                            <hr>
+                        </div>
+                    @endforeach
+                </header>
+            </section>
+            @endforeach
+        </div>

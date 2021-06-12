@@ -68,6 +68,7 @@ class TweetsController extends Controller
     {
         $tweet = Tweets::find($id);
         return view ('tweets.show', ['tweet' => $tweet]);
+
     }
 
     /**
@@ -79,7 +80,7 @@ class TweetsController extends Controller
     public function edit($id)
     {
         $tweet = Tweets::find($id);
-        return view ('tweets.edit', ['tweet' =>$tweet]);
+        return view ("/tweets/edit", ['tweet' =>$tweet]);
     }
 
     /**

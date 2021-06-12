@@ -7,11 +7,10 @@
 		    <input type="text" name="search" required/>
 		    <button type="submit">Search</button>
 		</form>
-		<div class="container"> 
-        <div class="row">
-          
+		
 			@foreach ($tweets as $tweet)
 				<section>
+					@if ( Auth::id() == $tweet->user->id)
 						<hr>
 						<header>
 							{{ $tweet->name}}
@@ -22,6 +21,7 @@
 							</a>
 						</div>
 						<hr>
+					@endif
 				</section>
 			@endforeach
 			

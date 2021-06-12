@@ -12,16 +12,43 @@ class UsersController extends Controller
     public function index()
     {
         $userId = Auth::id();
-        $tweets = Tweets::join('users', 'users.id', '=', 'tweets.user_id')
-        ->select('tweets.*', 'users.name')
-        ->orderBy('created_at', 'desc')
-        ->get();
+        return view('profile.index')->with('users', User::all());
 
-         return view('profile.index')->with('users', User::all());
-         return view('profile.index')->with ('tweets', Tweets::all()); ///šis nestrādā, var pārbaudīt ar guest, jo guest nav tweet
+    }
+    public function destroy($id)
+    {
+        User::where(['id' => $id])->delete();
+        return redirect('/profile');
+    }
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view ("profile.edit",['user', $user]);
+    }
+    public function update(Request $request, User $users, $id)
+    {
+         $request->validate([
+            'name' => 'required',
+            'email' => 'required'
+        ]);
 
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->save();
+
+        return redirect ("/profile/$id");
+    }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required'
+        ]);
+        
+        return redirect('/profile/$id');
     }
 
 
+
+
 }
-/////$tweets = tweets::alll()->where(['user_id' => $userId]); šis itkā pārbauda vai tweeta veidotāja id sakrīt ar user id, kas ir ielogojies .

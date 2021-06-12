@@ -19,13 +19,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('tweets', App\Http\Controllers\TweetsController::class);
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::post('comments', [App\Http\Controllers\CommentController::class, 'store']);
-Route::get('/search/', [App\Http\Controllers\TweetsController::class, 'search'])->name('search');
-Route::get('profile', [App\Http\Controllers\UsersController::class, 'index'])->name('profile');
+    Route::resource('tweets', App\Http\Controllers\TweetsController::class);
 
+    Route::resource('users', App\Http\Controllers\UsersController::class);
 
+    Route::post('comments', [App\Http\Controllers\CommentController::class, 'store']);
 
+    Route::get('/search/', [App\Http\Controllers\TweetsController::class, 'search'])->name('search');
+
+    Route::get('profile/{id}', [App\Http\Controllers\UsersController::class, 'index'])->name('profile');

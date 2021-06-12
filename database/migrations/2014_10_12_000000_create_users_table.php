@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('role_id'); /// user sadalīšana
             $table->rememberToken();
             $table->timestamps();
+
         });
     }
 
