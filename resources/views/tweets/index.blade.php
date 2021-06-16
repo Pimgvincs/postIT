@@ -8,7 +8,7 @@
 		    <button type="submit">Search</button>
 		</form>
 		<div class="container"> 
-        <div class="row">
+        <div class=" row 2col-md-8">
           
 			@foreach ($tweets as $tweet)
 				<section>
