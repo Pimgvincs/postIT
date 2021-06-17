@@ -4,7 +4,7 @@
 <body class="bg-dark">
       @if(Auth::check()) 
           <div class="col-md-12">
-      <a  class="float-right" href="/profile/{{ Auth::user()->id}}" method="POST">Profils</a>
+      <a  class="float-right" href="/profile/{{ Auth::user()->id }}" method="POST">Profils</a>
       @else 
        <div class="col-md-12">
       <a  class="float-right" href="/profile/0" method="POST">Profils</a>
