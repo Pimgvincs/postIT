@@ -14,7 +14,7 @@
 			<textarea maxlength="25" name="text" id="tweet-text" class="border border-success text-center w-50 h-75 "></textarea>
 			@if($errors->has('text'))
 				@foreach ($errors->get('text') as $message)
-				<pre>{{ $message }}</pre>
+				<pre class="text-danger">{{ $message }}</pre>
 				@endforeach
 			@endif
 		</div>

@@ -31,7 +31,7 @@
    <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <div class="col-md-1">
+                <div class="">
                     <img src="/svg/logo.svg" style="max-height:45px;">
                 </div>
                 <div class="h5 border-2">
@@ -47,10 +47,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                             @if (Auth::check())
-                                <li><a href="/tweets/create">Write a tweet</a></li>
+                                <li class="mr-2 ml-2 h5"><a href="/tweets/create">Write a tweet</a></li>
                             @endif
                             <div class="navbar-nav ml-auto">
-                                <li><a href="/">Home</a></li>
+                                <li class="mr-2 ml-2 h5"><a href="/">Home</a></li>
                             </div>  
                     </ul> 
 
@@ -104,5 +104,3 @@
     @show
 </body>
 </html>
-
- 

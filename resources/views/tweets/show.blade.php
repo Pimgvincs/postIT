@@ -2,7 +2,7 @@
 
 @section('main')
 <body class="bg-dark">
-    <h1> <p class="text-light ml-2 text-info mt-2">{{ $tweet->text }}</p></h1>
+    <h1> <p class="text-info ml-2 text-info mt-2">{{ $tweet->text }}</p></h1>
     @if (Auth::check())
 		@if ( Auth::id() == $tweet->user->id) 
 	        <div class="bg-dark mb-2 pb-2">
@@ -27,7 +27,7 @@
 	                <label for="comment"  class="text-light border border-success p-1"><button class="bg-success">Add Comment</button></label>
 			<input type="text" name="text" id="comment">	
 			@error('text')
-			    <div>{{ $message }}</div>
+			    <div class="text-danger ml-1"> !  {{ $message }}</div>
 			@enderror
 		</form> 
 	    </div>
@@ -52,3 +52,5 @@
 	@endif
 @endsection 
 </body>
+show.blade.php
+2 KB

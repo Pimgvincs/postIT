@@ -16,7 +16,7 @@
 			<input class="border border-success text-center w-25 h-20 " maxlength="25" name="text" id="tweet-text" type="text" value="{{ $tweet->text }}">
 			@if ($errors->has('text'))
 				@foreach ($errors->get('text') as $message)
-				<pre>{{ $message }}</pre>
+				<pre class="text-danger">{{ $message }}</pre>
 				@endforeach
 			@endif
 		</div>

@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card bg-dark border border-primary">
                 <div class="card-header bg-info">{{ __('Login') }}</div>
                 <div class="card-body">
                     @if (session('error'))
@@ -77,4 +77,3 @@
 </div>
 </body>
 @endsection
-
